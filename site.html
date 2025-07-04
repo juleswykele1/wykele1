@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WYKELE ENTERTAINMENT - Explore Music, Shows & Fun</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="./Logo ya WYKELE Entertainment.png" alt="WYKELE Logo" class="h-10 w-auto">
+        <span class="text-2xl font-bold text-blue-600">WYKELE ENTERTAINMENT</span>
+      </div>
+      <nav class="space-x-6 font-semibold">
+        <a href="#" class="hover:text-blue-600 transition">Home</a>
+        <a href="jules.html" class="hover:text-blue-600 transition">Jules</a>
+        <a href="https://www.youtube.com/@wykeleentertainment/shorts" target="_blank" class="hover:text-blue-600 transition">Entertainment</a>
+        <a href="#PayNow" class="hover:text-blue-600 transition">Pay Now</a>
+        <a href="#Upload" class="hover:text-blue-600 transition">Upload</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Meet Bright -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-4">Meet Bright - Sound Engineer</h3>
+      <p class="text-lg text-gray-700 mb-6">
+        Bright is the audio genius and sound producer behind every beat and mix at WYKELE ENTERTAINMENT. From studio sessions to live shows,
+        his precision and passion bring out the best in every performance.
+      </p>
+      <figure class="mb-6">
+        <img src="https://example.com/bright-engineer.jpg" alt="Bright - WYKELE Sound Engineer" class="mx-auto w-64 rounded-xl shadow-md">
+        <figcaption class="text-sm italic text-gray-600">
+          Bright, SOUND ENGINEER AND PHOTOGRAPHER at WYKELE Entertainment. (Bright, AVI)
+        </figcaption>
+      </figure>
+      <figure>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+          title="Bright sound check at WYKELE" frameborder="0" allowfullscreen class="mx-auto w-full max-w-lg rounded-xl">
+        </iframe>
+        <figcaption class="mt-2 text-sm italic text-gray-600">
+          Bright mixing sound at WYKELE Entertainment. (Bright [YouTube], 2025)
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Live News API Content -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-10">Live Updates from IGIHE / Rwanda Entertainment</h3>
+      <div id="trending-updates" class="grid md:grid-cols-3 gap-8">
+        <!-- Fetched news will load here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for News API -->
+  <script>
+    async function fetchTrending() {
+      const apiKey = 'YOUR_NEWSDATA_API_KEY'; // replace this with your actual API key
+      const url = `https://newsdata.io/api/1/latest?country=rw&category=entertainment&apikey=${apiKey}`;
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const container = document.getElementById('trending-updates');
+        container.innerHTML = '';
+        data.results.slice(0, 6).forEach(item => {
+          const card = document.createElement('div');
+          card.className = "bg-gradient-to-br from-gray-100 to-white p-6 rounded-lg shadow";
+          card.innerHTML = `
+            <h4 class="font-bold text-xl mb-2">${item.title}</h4>
+            <p class="text-gray-700 text-sm">${item.description || 'No description available.'}</p>
+            <p class="mt-2 text-sm italic text-gray-500">Source: ${item.source_id}, ${new Date(item.pubDate).toLocaleDateString()}</p>
+          `;
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error('Failed to fetch news:', err);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', fetchTrending);
+  </script>
+
+
+
+  <!-- Static WYKELE Trending Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-10">WYKELE Updates & Trending</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-r from-pink-100 to-purple-200 p-6 rounded-lg shadow">
+          <h4 class="font-bold text-xl mb-2">🎧 New Music Drop</h4>
+          <p class="text-gray-700 text-sm">Reference: WYKELE ENTERTAINMENT. (2025). <em>Rising Beats: Kigali Street Anthem</em>. YouTube.</p>
+        </div>
+        <div class="bg-gradient-to-r from-green-100 to-blue-200 p-6 rounded-lg shadow">
+          <h4 class="font-bold text-xl mb-2">🎥 Behind the Scenes</h4>
+          <p class="text-gray-700 text-sm">Reference: WYKELE ENTERTAINMENT. (2025). <em>Creative Studio Highlights</em>. Vimeo.</p>
+        </div>
+        <div class="bg-gradient-to-r from-yellow-100 to-red-200 p-6 rounded-lg shadow">
+          <h4 class="font-bold text-xl mb-2">📱 Trending on Social</h4>
+          <p class="text-gray-700 text-sm">Reference: WYKELE ENTERTAINMENT. (2025). <em>Hashtag Challenge Showcase</em>. Instagram Reels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APA References -->
+  <section class="py-16 bg-white border-t">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-4">References</h3>
+      <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+        <li>Bright. (n.d.). <em>Bright adjusting mixer, WYKELE Entertainment</em> [Photograph]. Example Site. https://example.com/bright-engineer.jpg</li>
+        <li>Bright [YouTube]. (2025, May 10). <em>Bright sound check at WYKELE Entertainment</em> [Video]. YouTube. https://youtu.be/VIDEO_ID</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>Rising Beats: Kigali Street Anthem</em>. YouTube.</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>Creative Studio Highlights</em>. Vimeo.</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>Hashtag Challenge Showcase</em>. Instagram Reels.</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>Tour Dates & Performances</em>. Official Website.</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>Global Fan Collage</em>. Facebook.</li>
+        <li>WYKELE ENTERTAINMENT. (2025). <em>WYKELE Featured in Rwandan Times</em>. NewsHub.</li>
+        <li>Bytesview Analytics. (n.d.). Rwanda top headlines. Retrieved from NewsData API: https://newsdata.io/</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

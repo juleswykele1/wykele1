@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WYKELE ENTERTAINMENT - Explore Music, Shows & Fun</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+   <div class="flex items-center space-x-3">
+  <img src="./Logo ya WYKELE Entertainment.png" alt="WYKELE Logo" class="h-10 w-auto">
+  <span class="text-2xl font-bold text-blue-600">WYKELE ENTERTAINMENT</span>
+</div>
+
+      <nav class="space-x-6 font-semibold">
+        <a href="#" class="hover:text-blue-600 transition">Home</a>
+        <a href="jules.html" class="hover:text-blue-600 transition">Jules</a>
+<a href="https://www.youtube.com/@wykeleentertainment/shorts" target="_blank" class="hover:text-blue-600 transition">Entertainment</a>
+        <a href="#Pay Now" class="hover:text-blue-600 transition">Pay Now</a>
+         <a href="site.html" class="hover:text-blue-600 transition">Update</a>
+         
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl font-bold mb-4">Experience the Power of Entertainment</h2>
+      <p class="mb-6 text-lg">Discover music, movies, live shows, and trending content from WYKELE ENTERTAINMENT.</p>
+     <a href="https://www.youtube.com/@wykeleentertainment?sub_confirmation=1" 
+   target="_blank"
+   class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+   Explore Now
+</a>
+
+      <!-- Meet the Creator -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+    <img src="./screenshot (2).png" alt="Jules Wykele" class="w-64 rounded-xl shadow-lg">
+    <div class="text-center md:text-left">
+      <h3 class="text-3xl font-bold mb-4">Meet the Creator</h3>
+      <p class="text-gray-700 text-lg">Jules Wykele is the visionary behind <strong>WYKELE ENTERTAINMENT</strong>, bringing trending music, live shows, and local talent to the spotlight daily.</p>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </section>
+
+
+<!-- Upload Section -->
+<section id="Upload" class="bg-white py-16 flex flex-col items-center">
+  <div class="w-64 h-64 bg-gray-100 border-2 border-dashed border-purple-400 rounded-xl flex flex-col items-center justify-center space-y-4 p-4 shadow-md">
+    <div class="text-gray-400 text-3xl">⬆️</div>
+    <p class="text-sm text-center text-gray-600">Drag & drop files here or</p>
+    <label for="file-upload" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-md cursor-pointer text-sm shadow hover:opacity-90 transition">
+      Upload File
+    </label>
+    <input id="file-upload" type="file" class="hidden" onchange="previewFile(event)" />
+  </div>
+
+  <!-- Preview Area -->
+  <div id="preview" class="mt-6 w-full max-w-sm rounded-lg overflow-hidden shadow-md hidden">
+    <!-- Preview will appear here -->
+  </div>
+</section>
+
+<script>
+  function previewFile(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('preview');
+    preview.innerHTML = ''; // Clear previous preview
+    preview.classList.remove('hidden');
+
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    if (file.type.startsWith('image')) {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = "Uploaded Image";
+      img.className = "w-full h-auto";
+      preview.appendChild(img);
+    } else if (file.type.startsWith('video')) {
+      const video = document.createElement('video');
+      video.src = url;
+      video.controls = true;
+      video.className = "w-full h-auto";
+      preview.appendChild(video);
+    } else {
+      preview.innerHTML = `<p class="text-center text-gray-600 p-4">Unsupported file type.</p>`;
+    }
+  }
+</script>
+
+
+
+ <!-- Categories -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Entertainment Categories</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-gradient-to-br from-purple-100 to-purple-200 p-6 rounded-xl shadow text-center font-semibold">Music</div>
+      <div class="bg-gradient-to-br from-red-100 to-red-200 p-6 rounded-xl shadow text-center font-semibold">Movies</div>
+      <div class="bg-gradient-to-br from-green-100 to-green-200 p-6 rounded-xl shadow text-center font-semibold">Live Shows</div>
+
+      <!-- Linked Comedy Button -->
+      <a href="https://www.youtube.com/@wykeleentertainment/videos" target="_blank" class="block bg-gradient-to-br from-yellow-100 to-yellow-200 p-6 rounded-xl shadow text-center font-semibold hover:bg-yellow-300 transition">
+        News
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Featured Entertainment -->
+  <section id="entertainment" class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-10 text-center">Featured Entertainment</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <!-- Entertainment Feature 1 -->
+<div class="bg-white shadow-lg rounded-xl overflow-hidden hover:scale-105 transition">
+ <a href="https://www.youtube.com/@wykeleentertainment" target="_blank">
+  <img src="./images.jpg" alt="Kigali Arena - Live Concert" class="w-full">
+</a>
+
+  <div class="p-5">
+    <h4 class="font-bold text-xl mb-2">Live Concert - Kigali 2025</h4>
+    <p class="text-sm text-gray-600">Join us for an unforgettable night with top Rwandan artists.</p>
+  </div>
+</div>
+
+
+
+
+          
+        <!-- Entertainment Feature 2 - Embedded Video -->
+<div class="bg-white shadow-lg rounded-xl overflow-hidden hover:scale-105 transition">
+  <video controls class="w-full">
+    <source src="./Black Minimalist Channel YouTube Intro Video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="p-5">
+    <h4 class="font-bold text-xl mb-2">New Music Video - WYKELE</h4>
+    <p class="text-sm text-gray-600">Watch the latest music release exclusively on WYKELE ENTERTAINMENT.</p>
+  </div>
+</div>
+
+<div class="bg-white shadow-lg rounded-xl overflow-hidden hover:scale-105 transition">
+  <img src="./GettyImages-501959635-e1500571217701.jpg" alt="Stand-Up Comedy Show" class="w-full h-48 object-cover">
+  <div class="p-5">
+    <h4 class="font-bold text-xl mb-2">Stand-Up Comedy Night</h4>
+    <p class="text-sm text-gray-600">Laugh out loud with top comedians from Rwanda and beyond.</p>
+  </div>
+</div>
+
+  </section>
+
+ <!-- Testimonials -->
+<section class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-6">What Our Fans Say</h3>
+
+    <!-- Fan Image -->
+    <img src="./webvcfgetafemister10427.jpg" alt="WYKELE Fans" class="mx-auto mb-4 rounded-xl shadow-lg w-full max-w-2xl">
+    
+    <!-- Long Description -->
+    <p class="text-gray-700 text-base mb-6">
+      At WYKELE ENTERTAINMENT, our fans are more than just spectators — 
+      they are the heartbeat of everything we do. This photo captures
+       just a glimpse of the overwhelming support we receive during live events,
+       music launches, and exclusive show premieres. Each face in the crowd represents 
+       someone who believes in our vision to bring quality entertainment, 
+       uplift local talent, and create unforgettable moments. 
+       From packed stadiums to online communities, the energy and passion of 
+       our fans drive us to innovate and deliver content that resonates deeply. 
+       We thank each and every one of you for making WYKELE not just a brand, but a movement.
+    </p>
+
+    <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+      <p class="italic text-lg">"WYKELE ENTERTAINMENT is my go-to for discovering amazing shows and music. Love it!"</p>
+      <p class="font-semibold mt-4 text-blue-600">— JULES WYKELE</p>
+    </div>
+  </div>
+</section>
+
+<!-- MTN Mobile Money Payment Section -->
+<section class="bg-white py-16" id="payment">
+  <div class="max-w-md mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-4">Support WYKELE ENTERTAINMENT</h2>
+    <p class="text-gray-600 mb-6">Make a payment using MTN Mobile Money.</p>
+    
+    <button onclick="makePayment()" class="bg-yellow-500 text-white px-6 py-3 rounded-md hover:bg-yellow-600 transition font-semibold">
+      Pay Now with MTN MoMo
+    </button>
+  </div>
+</section>
+
+<!-- Flutterwave JS -->
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script>
+  function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "YOUR_FLUTTERWAVE_PUBLIC_KEY", // Replace with your real public key
+      tx_ref: "wykele-" + Date.now(),
+      amount: 5000,
+      currency: "RWF",
+      payment_options: "mobilemoneyrwanda",
+      customer: {
+        email: "customer@email.com",
+        phonenumber: "0798733456",
+        name: "Jules Wykele",
+      },
+      callback: function (data) {
+        alert("Payment complete! Transaction ID: " + data.transaction_id);
+      },
+      customizations: {
+        title: "WYKELE ENTERTAINMENT",
+        description: "Support our projects with MTN Mobile Money",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/MTN_Logo.svg/512px-MTN_Logo.svg.png"
+      },
+    });
+  }
+</script>
+
+
+
+ <!-- Testimonials -->
+<section class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-6">Digital creater</h3>
+
+    <!-- Fan Image -->
+    <img src="./492409763_640331995507049_7298159632814727980_n.jpg" alt="WYKELE Fans" class="mx-auto mb-4 rounded-xl shadow-lg w-full max-w-2xl">
+    
+    <!-- Long Description -->
+    <p class="text-gray-700 text-base mb-6">
+
+A Digital Creator at WYKELE ENTERTAINMENT** 
+is the visionary behind our visual content—crafting engaging videos, 
+music clips, and social media stories that connect with audiences and
+ showcase talent. They blend creativity with culture to bring the WYKELE
+  experience to life online.
+
+    </p>
+
+  </div>
+</section>
+
+<!-- Hero Section with Enlarged Background Image and Flying Birds -->
+<section class="relative h-[60vh] md:h-[80vh] w-full bg-black flex items-center justify-center overflow-hidden">
+  <!-- Larger Container -->
+  <div class="relative w-[90%] md:w-[1000px] h-[350px] md:h-[500px]">
+    <img src="./pexels-dantemunozphoto-15941875.jpg" alt="Gradient Graphic"
+         class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-80 animate-pulse">
+
+    <!-- Bird Container -->
+    <div id="bird-container" class="absolute inset-0 pointer-events-none z-20"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 text-white text-center animate-fade-up">
+      <h1 class="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-white to-red-500">
+        Jules Wykele
+      </h1>
+      <p class="mt-2 text-xl md:text-2xl text-gray-200 font-medium">
+        Founder of WYKELE ENTERTAINMENT
+
+        **Jules Wykele** is the visionary founder of **WYKELE ENTERTAINMENT**,
+         a creative platform in Rwanda that promotes music, film, and visual storytelling.
+          Known for his artistic direction and community-driven events, Jules blends local 
+          culture with modern entertainment to empower young talent. His goal is to make Rwandan 
+          stories globally recognized through powerful content and innovative performances.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Animation Styles -->
+<style>
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 5s ease-out forwards;
+  }
+</style>
+
+
+<!-- Animation Styles -->
+<style>
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 1s ease-out forwards;
+  }
+</style>
+
+
+<!-- Location Map -->
+<section class="py-16 bg-white" id="location">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-4 text-blue-800">Our Location</h3>
+    <p class="mb-6 text-gray-600">Find us at the heart of Kigali for live shows, music sessions, and more!</p>
+    <div class="w-full h-96 shadow-lg rounded-lg overflow-hidden">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.4804065817483!2d30.06040817792862!3d-1.9440838999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7058fdb0fef%3A0x7c0b6e0895f414c0!2sKigali%20City%20Tower!5e0!3m2!1sen!2srw!4v1718914872684!5m2!1sen!2srw" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+<form action="https://formsubmit.co/juleswykele@gmail.com" method="POST" class="bg-white p-4 rounded-lg shadow-md max-w-sm mx-auto space-y-4">
+  <input type="hidden" name="_captcha" value="false">
+  
+  <input type="text" name="name" placeholder="Your Name" required 
+         class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-blue-500">
+  
+  <input type="email" name="email" placeholder="Your Email" required 
+         class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-blue-500">
+  
+  <textarea name="message" placeholder="Your Message" rows="3" required 
+            class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-blue-500"></textarea>
+  
+  <button type="submit" 
+          class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 text-sm font-semibold transition">
+    Send Message
+  </button>
+</form>
+
+<!-- Good Feature: Newsletter Signup Section -->
+<section class="bg-blue-50 py-16">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-4 text-blue-800">Stay Updated!</h3>
+    <p class="mb-6 text-gray-700">Subscribe to get the latest updates on music videos, shows, and live events from WYKELE ENTERTAINMENT.</p>
+    <form action="https://formsubmit.co/juleswykele@gmail.com" method="POST" class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="email" name="email" placeholder="Enter your email" required class="w-full sm:w-auto flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-blue-500 text-sm">
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 text-sm font-semibold transition">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+
+
+ <!-- New Footer -->
+  <footer class="bg-white text-gray-900 py-10 px-4 border-t">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <h4 class="font-bold text-lg mb-2">WYKELE ENTERTAINMENT</h4>
+        <p>Your creative partner for music, media, and visual storytelling. Where imagination meets innovation.</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Company</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-blue-600">About</a></li>
+          <li><a href="#" class="hover:text-blue-600">Careers</a></li>
+          <li><a href="#" class="hover:text-blue-600">Press</a></li>
+          <li><a href="#" class="hover:text-blue-600">Affiliates</a></li>
+          <li><a href="#" class="hover:text-blue-600">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Features</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-blue-600">Music Production</a></li>
+          <li><a href="#" class="hover:text-blue-600">Video Editing</a></li>
+          <li><a href="#" class="hover:text-blue-600">Live Performances</a></li>
+          <li><a href="#" class="hover:text-blue-600">Media Campaigns</a></li>
+          <li><a href="#" class="hover:text-blue-600">Creative Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Helpful Links</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-blue-600">Support</a></li>
+          <li><a href="#" class="hover:text-blue-600">Documentation</a></li>
+          <li><a href="#" class="hover:text-blue-600">Pricing</a></li>
+          <li><a href="#" class="hover:text-blue-600">Get Started</a></li>
+          <li><a href="#" class="hover:text-blue-600">Community</a></li>
+        </ul>
+      </div>
+    </div>
+   
+  </footer>
+
+</body>
+</html>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">&copy; 2025 WYKELE ENTERTAINMENT. All rights reserved.</p>
+    
+        <a href="https://www.youtube.com/@wykeleentertainment" target="_blank" class="hover:text-red-500 transition flex items-center space-x-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.39.566a2.994 2.994 0 0 0-2.107 2.12A31.14 31.14 0 0 0 0 12a31.14 31.14 0 0 0 .503 5.814 2.994 2.994 0 0 0 2.107 2.12C4.45 20.5 12 20.5 12 20.5s7.55 0 9.39-.566a2.994 2.994 0 0 0 2.107-2.12A31.14 31.14 0 0 0 24 12a31.14 31.14 0 0 0-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <a href="https://web.facebook.com/profile.php?id=100085907627414" target="_blank" class="hover:text-blue-500 transition flex items-center space-x-1">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+    <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.342v21.316C0 23.4.6 24 1.342 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.919.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.59l-.467 3.622h-3.123V24h6.116C23.4 24 24 23.4 24 22.658V1.342C24 .6 23.4 0 22.675 0z" />
+  </svg>
+  <span>Facebook</span>
+</a>
+        <a href="#" class="hover:text-gray-300 transition">Twitter</a>
+        <a href="https://www.instagram.com/juleswykele/" target="_blank" class="hover:text-pink-500 transition flex items-center space-x-1">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.345 3.608 1.32.975.975 1.258 2.242 1.32 3.608.058 1.266.07 1.646.07 4.84s-.012 3.574-.07 4.84c-.062 1.366-.345 2.633-1.32 3.608-.975.975-2.242 1.258-3.608 1.32-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.345-3.608-1.32-.975-.975-1.258-2.242-1.32-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.574.07-4.84c.062-1.366.345-2.633 1.32-3.608.975-.975 2.242-1.258 3.608-1.32C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.013 7.052.072 5.773.131 4.672.348 3.728.975 2.783 1.602 2.019 2.366 1.392 3.31.765 4.254.548 5.355.489 6.635.43 7.915.417 8.324.417 12s.013 4.085.072 5.365c.059 1.28.276 2.381.903 3.325.627.944 1.391 1.708 2.335 2.335.944.627 2.045.844 3.325.903C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.28-.059 2.381-.276 3.325-.903.944-.627 1.708-1.391 2.335-2.335.627-.944.844-2.045.903-3.325.059-1.28.072-1.689.072-5.365s-.013-4.085-.072-5.365c-.059-1.28-.276-2.381-.903-3.325-.627-.944-1.391-1.708-2.335-2.335-.944-.627-2.045-.844-3.325-.903C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8.001 4 4 0 0 1 0 8.001zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+  </svg>
+  <span>Instagram</span>
+</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
